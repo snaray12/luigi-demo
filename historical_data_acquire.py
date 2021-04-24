@@ -15,9 +15,7 @@ import time
 
 DATA_DIR = 'data'
 INPUT_FILE = "stklist.txt"
-PREFIX_URL = "https://query1.finance.yahoo.com/v7/finance/download/"
-#SUFFIX_URL = "?period1=820454400&period2=1605312000&interval=1d&events=history&includeAdjustedClose=true"
-
+PREFIX_URL = ""
 SUFFIX_URL = "?period1=820454400&period2=1605830400&interval=1d&events=history&includeAdjustedClose=true"
 
 class FetchHistoricalData(luigi.Task):
@@ -30,7 +28,7 @@ class FetchHistoricalData(luigi.Task):
         return None
     
     def output(self):
-        return luigi.LocalTarget('C:/Users/sundararaman/Documents/personal/stk/data/res.csv')
+        return luigi.LocalTarget('C:/Users/Documents/personal/stk/data/res.csv')
     
     def run(self):
         with open(os.path.join(self.data_dir, self.file_name), "r") as f:
@@ -47,4 +45,4 @@ class FetchHistoricalData(luigi.Task):
               
 
 if __name__ == "__main__":
-    luigi.build([FetchHistoricalData("newstklist.txt", "C:\\Users\\sundararaman\\Documents\\personal\\stk\\data")], workers=1, local_scheduler=True)
+    luigi.build([FetchHistoricalData("newstklist.txt", "C:\\Users\\Documents\\personal\\stk\\data")], workers=1, local_scheduler=True)
