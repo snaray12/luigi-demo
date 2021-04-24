@@ -128,7 +128,7 @@ class TaskManager(luigi.WrapperTask):
 
         
 if __name__ == "__main__":
-    datadir = "C:\\Users\\sundararaman\\Documents\\personal\\stk\\data"
+    datadir = "C:\\Users\\Documents\\personal\\stk\\data"
     '''
     luigi.build([TransformData(
         filename="ITC.NS.csv", 
