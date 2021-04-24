@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import numpy as np
 
-datadir = "C:\\Users\\sundararaman\\Documents\\personal\\stk\\data"
+datadir = "C:\\Users\\Documents\\personal\\stk\\data"
 
 for root, dirnames, filenames in os.walk(datadir):
     for fn in filenames:
